@@ -27,6 +27,7 @@ function getBooks(searchedBook) {
 
         //makes each book object
         const newBook = {
+          tempId: i,
           title: book.volumeInfo.title,
           authors: book.volumeInfo.authors,
           thumbnail: book.volumeInfo.imageLinks.thumbnail,
@@ -40,38 +41,64 @@ function getBooks(searchedBook) {
       }
       //log em to check the results for now
       console.log(bookResults);
-      
+      localStorage.setItem("bookResults", JSON.stringify(bookResults));
+      return bookResults;
     }
 )};
 
 //auto calls our getBooks function (for now)
 function bookSearch() {
-  let searchedBook =`infinite jest`; //this is a placeholder search for testing and will become from user input
+  let searchedBook =`slow horses`; //this is a placeholder search for testing and will become from user input
 
   getBooks(searchedBook);
 }
 
-bookSearch();
+
 
 //everything below this is a placeholder so i can chat with amanda about what the search page will look like
 document
-  .querySelector('add-book') //so when you click the book from the search that you want it'll add that book to your collection
+  .querySelector('.book-info') //so when you click the book from the search that you want it'll add that book to your collection
   .addEventListener('add', bookAddHandler);
 
 const bookAddHandler = async (event) => {
   event.preventDefault();
 
-    const response = await fetch(`/api/books`, {
+  const element = event.target;
+  console.log(element);
+
+    const clickedId = element.getAttribute("id");
+    console.log(clickedId);
+
+    //get the search result array to search through it
+    searchResults = JSON.parse(localStorage.getItem("searchResults"));
+    console.log(searchResults);
+
+    //look through search result array to find marching id/imdb id
+    const result = searchResults.find(({ tempId }) => tempId == clickedId);
+    console.log(result); //log to check
+
+  const bookToAdd = {
+    title: result.title,
+    authors: result.authors,
+    thumbnail: result.thumbnail,
+    publishedDate: result.publishedDate, 
+    description: result.description,
+    pageCount: result.pageCount,
+  }
+
+    const response = await fetch(`/api/addBook`, {
       method: 'POST',
-      body: JSON.stringify({title, authors, thumbnail, publishedDate, description, pageCount, user_id}),
+      body: JSON.stringify({bookToAdd}),
       headers: {
         'Content-Type': 'application/json',
       },
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/profile'); //lol where do we want this to go
     } else {
       alert('Failed to add the book');
     }
   }
+
+  window.onload = bookSearch();
