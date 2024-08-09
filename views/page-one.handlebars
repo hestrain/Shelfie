@@ -2,8 +2,8 @@
   {{! Reminder: userExamples comes from the data being passed in the res.render on pageOneRoutes.js! }}
   {{#each userExamples}}
 
-    <h2>{{message}}</h2>
-    <div>This messaage is specific to this user!</div>
+    <h2 id="user-message-{{@index}}">{{message}}</h2>
+    <div aria-labelledby="user-message-{{@index}}" aria-live="polite">This message is specific to this user!</div>
 
   {{/each}}
 </div>
