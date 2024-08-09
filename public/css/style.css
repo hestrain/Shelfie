@@ -1,6 +1,11 @@
 /* any css stylesheets can go in this folder */
 /* hint- remember to import them in your handlebars! */
-#header {
+
+* {
+  background-color: blue;
+}
+
+/* #header {
   background-color: lightblue;
 }
 #footer {
@@ -18,4 +23,4 @@
 
 #nav > ul > li {
   margin: 0 10px;
-}
+} */
