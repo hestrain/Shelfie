@@ -1,16 +1,8 @@
 // import all models here
 const User = require("./User");
 const ExampleData = require("./ExampleData");
-
-// Reminder- create any additional associations here
-// ExampleData.belongsTo(User, {
-//   foreignKey: "userId",
-//   onDelete: "CASCADE",
-// });
-
-// User.hasMany(ExampleData, {
-//   foreignKey: "userId",
-// });
+const Book = require("./Book");
+const Comment = require("./Comment");
 
 // IN DEVELOPMENT: db pathways; User has many Books and many Comments. Books have many Comments. Comments connect to single User and single Book through BookComment
 User.hasMany(Book, {
@@ -18,25 +10,27 @@ User.hasMany(Book, {
 })
 
 User.hasMany(Comment, {
-  through: BookComment,
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
 })
 
-Comment.belongsToMany(User, {
-through: BookComment,
+Comment.belongsTo(User, {
 foreignKey: 'user_id',
+onDelete: 'CASCADE',
 })
 
 Comment.belongsTo(Book, {
-  through: bookComment,
   foreignKey: 'book_id',
+  onDelete: 'CASCADE',
 })
 
 Book.hasMany(Comment, {
-  through: bookComment,
   foreignKey: 'book_id'
 })
 
+Book.belongsTo(User, {
+  foreignKey: 'user_id',
+})
+
 // export all models here
-module.exports = { User, ExampleData };
+module.exports = { User, Book, Comment };

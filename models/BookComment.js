@@ -4,6 +4,8 @@ const sequelize = require('../config/connection');
 
 class BookComment extends Model {}
 
+// Intermediary object, intended to bridge Comments between Book and User relations
+
 BookComment.init(
   {
     id: {
@@ -36,4 +38,4 @@ BookComment.init(
   }
 );
 
-module.exports = ProductTag;
+module.exports = BookComment;

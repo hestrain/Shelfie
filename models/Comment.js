@@ -1,12 +1,12 @@
 // Third-party Modules
 const { Model, DataTypes } = require("sequelize");
-const bcrypt = require("bcrypt");
 
 // Local Modules
 const sequelize = require("../config/connection");
 
-class Book extends Model {}
+class Comment extends Model {}
 
+// NOTE: Comment references User id for attribution
 Comment.init(
   {
     id: {
@@ -15,15 +15,16 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    username: {
+    text: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    password: {
-      type: DataTypes.STRING,
+    user_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
-      validate: {
-        len: [8, Infinity],
+      references: {
+        model: 'user',
+        key: 'id',
       },
       // Reminder- add any new columns you'd like to the User model here
     },
@@ -32,8 +33,8 @@ Comment.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "user",
+    modelName: "comment",
   }
 );
 
-module.exports = User;
+module.exports = Comment;
