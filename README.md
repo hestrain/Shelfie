@@ -1,7 +1,3 @@
-<!-- For assistance using this README for your project, reach out to your instructinoal staff. -->
-
-<!-- TODO: Highlight "404pandas" and shift+command+L (for mac) or cntrl+shift+L (for windows) to select all instances of the example Github Username and type your Username in its place -->
-<!-- TODO: Highlight "project-2-setup-guide" and shift+command+L (for mac) or cntrl+shift+L (for windows) to select all instances of the example Github Repository name and type your repostitory name in its place -->
 
 <div align="center">
 
@@ -9,36 +5,37 @@
   <!-- ![Name](urlToShieldHere)(urlToGithubHere) -->
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Contributors](https://img.shields.io/github/contributors/404pandas/project-2-setup-guide.svg?style=plastic&logo=appveyor)](https://github.com/404pandas/project-2-setup-guide/graphs/contributors)
-[![Forks](https://img.shields.io/github/forks/404pandas/project-2-setup-guide.svg?style=plastic&logo=appveyor)](https://github.com/404pandas/project-2-setup-guide/network/members)
-[![Stargazers](https://img.shields.io/github/stars/404pandas/project-2-setup-guide.svg?style=plastic&logo=appveyor)](https://github.com/404pandas/project-2-setup-guide/stargazers)
-[![Issues](https://img.shields.io/github/issues/404pandas/project-2-setup-guide.svg?style=plastic&logo=appveyor)](https://github.com/404pandas/project-2-setup-guide/issues)
+[![Contributors](https://img.shields.io/github/contributors/hestrain/shelfie.svg?style=plastic&logo=appveyor)](https://github.com/hestrain/Shelfie/graphs/contributors)
+[![Forks](https://img.shields.io/github/forks/hestrain/shelfie.svg?style=plastic&logo=appveyor)](https://github.com/hestrain/Shelfie/network/members)
+[![Stargazers](https://img.shields.io/github/stars/hestrain/shelfie.svg?style=plastic&logo=appveyor)](https://github.com/hestrain/Shelfie/stargazers)
+[![Issues](https://img.shields.io/github/issues/hestrain/shelfie.svg?style=plastic&logo=appveyor)](https://github.com/hestrain/Shelfie/issues)
 
 </div>
 
 <!-- PROJECT LOGO -->
 
 <div align="center">
-  <a href="https://github.com/404pandas/project-2-setup-guide">
+  <a href="https://github.com/hestrain/Shelfie">
   <!-- TODO: Correct this file path to a logo if you would like one; otherwise, delete this a href -->
     <img src="./public/images/" alt="Logo" width="80" height="80">
   </a>
 
 <!-- TODO: Edit App name -->
-  <h3 align="center">Project 2 App Name</h3>
+  <h3 align="center">Shelfie</h3>
 
   <p align="center">
   <!-- TODO: Edit App description -->
-    Project 2 Description will go here    <br />
-    <a href="https://github.com/404pandas/project-2-setup-guide"><strong>Explore the docs »</strong></a>
+    Shelfie is an application that allows the user to create and maintain a collection of books that they have read, or wish to read in the future. The application utilizes an SQL database to store persistent data, including books in the users' collections, and comments they have on individual books.
+    <br />
+    <a href="https://github.com/hestrain/Shelfie"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <!-- TODO: Edit deployment link -->
-    <a href="https://github.com/404pandas/project-2-setup-guide">View Demo(Coming Soon)</a>
+    <a href="https://github.com/hestrain/Shelfie">View Demo(Coming Soon)</a>
     ·
-    <a href="https://github.com/404pandas/project-2-setup-guide/issues">Report Bug</a>
+    <a href="https://github.com/hestrain/Shelfie/issues">Report Bug</a>
     ·
-    <a href="https://github.com/404pandas/project-2-setup-guide/issues">Request Feature</a>
+    <a href="https://github.com/hestrain/Shelfie/issues">Request Feature</a>
 
   </p>
 </div>
@@ -96,7 +93,7 @@ This project was built using Node, Express, Handlebars, PostgreSQL, and Sequeliz
   "devDependencies": {
     "nodemon": "^3.0.3"-->
 
-<!-- TODO: Add any additional badges as needed. For more info, visit: https://github.com/404pandas/empty-resources/blob/main/assets/images/shields.md -->
+<!-- TODO: Add any additional badges as needed. For more info, visit: https://github.com/hestrain/empty-resources/blob/main/assets/images/shields.md -->
 
 [![Javascript](https://img.shields.io/badge/Language-JavaScript-ff0000?style=plastic&logo=JavaScript&logoWidth=10)](https://javascript.info/)
 [![CSS](https://img.shields.io/badge/Language-CSS-ff8000?style=plastic&logo=CSS3&logoWidth=10)](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -122,7 +119,7 @@ Once completely built, this application will function as a deployed app on Rende
 1. Clone the rep
 
 ```
-git clone https://github.com/404pandas/project-2-setup-guide.git
+git clone https://github.com/hestrain/Shelfie.git
 ```
 
 2. Install dependencies
@@ -168,10 +165,10 @@ npm run start
     - [ ] Styling
 
 - [ ] Back End
-  - [ ] User Auth
-  - [ ] Models
-  - [ ] Seeds
-  - [ ] api Routing
+  - [X] User Auth
+  - [X] Models
+  - [X] Seeds
+  - [X] api Routing
 
 #### Future Development
 
@@ -179,7 +176,7 @@ npm run start
 - [ ] Add Lines of future development ideas here
 - [ ] Add Lines of future development ideas here
 
-See the [open issues](https://github.com/404pandas/project-2-setup-guide/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/hestrain/Shelfie/issues) for a full list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 
@@ -208,17 +205,17 @@ This project is licensed under the MIT license.
 
 <!-- TODO: Add your name, portfolio link, and email if you would like here -->
 
-[Mary Elenius](https://maryelenius.com/) - mary.panda.jackson@gmail.com
+[Heatherellen Strain](https://github.com/hestrain) - mary.panda.jackson@gmail.com
 
-[Contributor One](https://maryelenius.com/) - contributor.one@email.com
+[Amanda Changa](https://github.com/mandi7469) - contributor.one@email.com
 
-[Contributor One](https://maryelenius.com/) - contributor.one@email.com
+[Reina Simms](https://github.com/Reina2024) - contributor.one@email.com
 
-[Contributor One](https://maryelenius.com/) - contributor.one@email.com
+[William Allred](https://github.com/AllredW) - allrewil@gmail.com
 
 Project Links:
 
-[Github Repository](https://github.com/404pandas/project-2-setup-guide)
+[Github Repository](https://github.com/hestrain/Shelfie)
 
 <!-- TODO: add your deployment link here -->
 

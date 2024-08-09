@@ -35,7 +35,6 @@
 .title {
   color: var(--teal);
   font-size: 100px;
-}
 
 .left-col {
   display: flex;
@@ -45,7 +44,7 @@
 img {
   width: 98%;
   height: 98%;
-}
+
 
 .skip-link {
   position: absolute;
@@ -60,4 +59,44 @@ img {
 
 .skip-link:focus {
   top: 0;
+}
+
+.back-to-top {
+    display: inline-block;
+    background-color: #00ffe1; /* Adjust button color */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.back-to-top:hover {
+    background-color: #0056b3; /* Adjust hover color */
+}
+
+.readbtn {
+  position: fixed !important;
+  bottom: 75px  !important;
+  right: 20px;
+  z-index: 1000;
+  background-color: #00ffe1;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+  width: 108.11px;
+  height: 42.5;
+}
+
+.readbtn:hover {
+
+      background-color: #0056b3;
+ 
 }
