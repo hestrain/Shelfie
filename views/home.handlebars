@@ -1,24 +1,15 @@
-<div>
-  {{!-- Reminder: examples comes from the data being passed in the res.render on homeRoutes.js! --}}
+<div class="row">
+  <div class="col-6 left-col">
+    <img
+      src="file:///Users/amandabrill/Desktop/Screenshot%202024-08-09%20at%201.50.31%E2%80%AFPM.png"
+      alt="shelf image"
+    />
 
-  {{#each examples}}
-  {{!-- Reminder- this is a partial! Handlebars will render the code located in items.handlebars in the /partials/ directory! --}}
-    {{>items}}
-  {{/each}}
-</div>
-
-<div>
-  <div>
-    <h2 id="create-message-heading">Create New Message</h2>
   </div>
-  <form id="new-data-form" aria-labelledby="create-message-heading" aria-describedby="form-instructions" novalidate>
-    <p id="form-instructions">Please enter your message below.</p>
-    
-    <label for="data-message">Message</label>
-    <textarea name="data-message" id="data-message" aria-required="true"></textarea>
+  <div class="col-6 right-col">
+    <h1 class="font title">Shelfie</h1>
+  </div>
 
-    <button type="submit" aria-label="Create new message">Create</button>
-  </form>
 </div>
 
 <script src="/js/newData.js"></script>

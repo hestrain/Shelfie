@@ -27,26 +27,24 @@
 }
 
 .right-col {
-  color: var(--teal);
   display: flex;
   justify-content: center;
-  align-content: center;
-  
-}
-
-#nav {
-  display: flex;
-}
-
-#nav > ul {
-  display: flex;
-  list-style-type: none;
   align-items: center;
 }
 
-#nav > ul > li {
-  margin: 0 10px;
+.title {
+  color: var(--teal);
+  font-size: 100px;
+
+.left-col {
+  display: flex;
+  justify-content: flex-start;
 }
+
+img {
+  width: 98%;
+  height: 98%;
+
 
 .skip-link {
   position: absolute;
