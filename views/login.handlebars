@@ -1,18 +1,19 @@
 <div>
   <div>
-    <h2>Login</h2>
+    <h2 id="login-heading">Login</h2>
   </div>
-  <form id="login-form">
+  <form id="login-form" aria-labelledby="login-heading" aria-describedby="login-instructions" novalidate>
+    <p id="login-instructions">Please enter your username and password to log in.</p>
     <div>
       <label for="username-input-login">Username</label>
-      <input type="text" id="username-input-login" />
+      <input type="text" id="username-input-login" name="username" aria-required="true" />
     </div>
     <div>
       <label for="password-input-login">Password</label>
-      <input type="password" id="password-input-login" />
+      <input type="password" id="password-input-login" name="password" aria-required="true" />
     </div>
-    <button type="submit" id="login-btn">Login!</button>
-    <a type="button" href="/signup">Sign up instead</a>
+    <button type="submit" id="login-btn" aria-label="Log in">Login!</button>
+    <a href="/signup" aria-label="Go to sign up page">Sign up instead</a>
   </form>
 </div>
 

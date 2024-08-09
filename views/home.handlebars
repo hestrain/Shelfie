@@ -1,5 +1,5 @@
 <div>
-    {{!-- Reminder: examples comes from the data being passed in the res.render on homeRoutes.js! --}}
+  {{!-- Reminder: examples comes from the data being passed in the res.render on homeRoutes.js! --}}
 
   {{#each examples}}
   {{!-- Reminder- this is a partial! Handlebars will render the code located in items.handlebars in the /partials/ directory! --}}
@@ -9,13 +9,15 @@
 
 <div>
   <div>
-    <h2>Create New Message</h2>
+    <h2 id="create-message-heading">Create New Message</h2>
   </div>
-  <form id="new-data-form">
+  <form id="new-data-form" aria-labelledby="create-message-heading" aria-describedby="form-instructions" novalidate>
+    <p id="form-instructions">Please enter your message below.</p>
+    
     <label for="data-message">Message</label>
-    <textarea name="data-message" ></textarea>
+    <textarea name="data-message" id="data-message" aria-required="true"></textarea>
 
-    <button type="submit">Create</button>
+    <button type="submit" aria-label="Create new message">Create</button>
   </form>
 </div>
 
