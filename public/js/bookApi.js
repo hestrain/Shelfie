@@ -1,18 +1,16 @@
-const bookKey = 'AIzaSyDHEnaX2QUg8xYq_F9TdxEXKe_UElIeU9A';
-let searchedBook =`gideon+the+ninth`;
-const maxResults = 6;
+const bookKey = 'AIzaSyDHEnaX2QUg8xYq_F9TdxEXKe_UElIeU9A'; //we probably want a way to encode this?
+// let searchedBook =`infinite jest`; //this is a placeholder search for testing and will become from user input
+const maxResults = 6; //limits results to 6
 
+//this will hold the array of up to 6 search results
 let bookResults = [];
 
-function getBooks() {
+//function to search for a query adn return an array of bok objects
+function getBooks(searchedBook) {
     //url for OTT API
-    const booksURL = `https://www.googleapis.com/books/v1/volumes?q=${searchedBook}&maxResults=${maxResults}`;
+    const booksURL = `https://www.googleapis.com/books/v1/volumes?q=${searchedBook}&maxResults=${maxResults}&key=${bookKey}`;
     const apiOptions = {
       method: "GET",
-      headers: {
-        "x-rapidapi-key": bookKey,
-        "x-rapidapi-host": "streaming-availability.p.rapidapi.com",
-      },
     };
 
     fetch(booksURL, apiOptions)
@@ -21,19 +19,36 @@ function getBooks() {
       return response.json();
     })
     .then(function (books) {
-      console.log(" BOOK INFO \n----------");
-      //log the whole thing so i can figure out what data we need
-      console.log(books);
-
+      console.log("BOOK INFO \n----------");
 
       for (let i = 0; i < books.items.length; i++) {
+        //this makes it easier to parse through the data
         const book = books.items[i];
-        const title = book.volumeInfo.title;
-        const authors = book.volumeInfo.authors;
-        const thumbnail = book.imageLinks.thumbnail;
-        const publishedDate = book.volumeInfo.publishedDate;
-        const description = book.volumeInfo.description;
-        const pageCount = book.volumeInfo.pageCount;
+
+        //makes each book object
+        const newBook = {
+          title: book.volumeInfo.title,
+          authors: book.volumeInfo.authors,
+          thumbnail: book.volumeInfo.imageLinks.thumbnail,
+          publishedDate: book.volumeInfo.publishedDate,
+          description: book.volumeInfo.description,
+          pageCount: book.volumeInfo.pageCount,
+        };
+
+        //adds the books to the array of searched books
+        bookResults.push(newBook);
       }
+      //log em to check the results for now
+      console.log(bookResults);
+      
     }
 )};
+
+//auto calls our getBooks function (for now)
+function bookSearch() {
+  let searchedBook =`infinite jest`; //this is a placeholder search for testing and will become from user input
+
+  getBooks(searchedBook);
+}
+
+bookSearch();
