@@ -18,25 +18,33 @@ Book.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    author: {
-      type: DataTypes.STRING,
+    authors: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false,
     },
-    thumbURL: {
+    thumbnail: {
         type: DataTypes.STRING,
         allowNull: true,
       },
-    publishDate: {
+    publishedDate: {
         type: DataTypes.DATE,
         allowNull: false,
     },
     description: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
       },
     pageCount: {
-        type: DataTypes.INTGER,
+        type: DataTypes.INTEGER,
         allowNull: false,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
     },
       // Reminder- add any new columns you'd like to the User model here
 },
@@ -44,7 +52,7 @@ Book.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "user",
+    modelName: "book",
   }
 );
 

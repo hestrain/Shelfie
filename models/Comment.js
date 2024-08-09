@@ -4,7 +4,7 @@ const { Model, DataTypes } = require("sequelize");
 // Local Modules
 const sequelize = require("../config/connection");
 
-class Book extends Model {}
+class Comment extends Model {}
 
 // NOTE: Comment references User id for attribution
 Comment.init(
@@ -20,7 +20,7 @@ Comment.init(
       allowNull: false,
     },
     user_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'user',
@@ -33,7 +33,7 @@ Comment.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "user",
+    modelName: "comment",
   }
 );
 
