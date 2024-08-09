@@ -63,8 +63,21 @@ img {
   font-size: 20px;
 }
 
+.img-thumbnail {
+  height: 300px;
+  width: 300px;
+  
+}
 
+.image{
+  display: flex;
+  justify-content: center;
+}
 
+.add-book-button {
+  display: flex;
+  justify-content: center;
+}
 
 
 
