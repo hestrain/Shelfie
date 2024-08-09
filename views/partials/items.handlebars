@@ -2,11 +2,10 @@
 {{!-- Partials are invoked in /views/ by using the syntax: {{> partial-file-name}} --}}
 
 <div>
-  <h2>
+  <h2 id="message-{{@index}}">
     {{message}}
   </h2>
-  <div>
-    Posted by
-    {{user.username}}
+  <div aria-labelledby="message-{{@index}}">
+    Posted by {{user.username}}
   </div>
 </div>

@@ -9,10 +9,13 @@
   </head>
 
   <body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     {{! Navbar }}
-    <nav id="nav">
+    <nav id="nav" role="navigation" aria-label="Main Navigation">
       <ul>
-        <li><a href="/">Home</a></li>
+        <li><a href="/" aria-current="page">Home</a></li>
         <li><a href="/pageOne">Page One</a></li>
         {{#if loggedIn}}
           <li><a href="#" id="logout">Logout</a></li>
@@ -21,21 +24,21 @@
         {{/if}}
       </ul>
     </nav>
+
     {{! Header }}
-    <header id="header">
+    <header id="header" role="banner">
       <h1>Shelfie</h1>
     </header>
 
     {{! Content }}
-    <main>
-      {{!-- Reminder- Depending on which route your user is visiting, the {{{body}}} will be replaced with the respective handlebar located in the /views/ directory!--}}
+    <main id="main-content" role="main">
+      {{!-- Depending on which route your user is visiting, the {{{body}}} will be replaced with the respective Handlebars template located in the /views/ directory --}}
       {{{body}}}
     </main>
 
     {{! Footer }}
-    <footer id="footer">
-      <h1>
-        © 2024 Copyright: All Rights Reserved by Shelfie</h1>
+    <footer id="footer" role="contentinfo">
+      <h1>© 2024 Copyright: All Rights Reserved by Shelfie</h1>
     </footer>
 
     {{#if loggedIn}}
