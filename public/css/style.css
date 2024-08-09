@@ -29,11 +29,22 @@
 .right-col {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .title {
   color: var(--teal);
-  font-size: 100px
+  font-size: 100px;
+}
+
+.left-col {
+  display: flex;
+  justify-content: flex-start;
+}
+
+img {
+  width: 98%;
+  height: 98%;
 }
 
 .skip-link {
