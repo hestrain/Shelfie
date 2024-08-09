@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 
 // Local Modules
 const sequelize = require("../config/connection");
-
+// checks login password with de-hashed user password on file
 class User extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
@@ -28,10 +28,10 @@ User.init(
       validate: {
         len: [8, Infinity],
       },
-      // Reminder- add any new columns you'd like to the User model here
     },
   },
   {
+    // on password creation, hashes password before storing
     hooks: {
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);

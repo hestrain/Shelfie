@@ -1,6 +1,5 @@
 // Third-party Modules
 const { Model, DataTypes } = require("sequelize");
-const bcrypt = require("bcrypt");
 
 // Local Modules
 const sequelize = require("../config/connection");
@@ -49,4 +48,4 @@ Book.init(
   }
 );
 
-module.exports = User;
+module.exports = Book;
