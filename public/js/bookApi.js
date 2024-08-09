@@ -52,3 +52,26 @@ function bookSearch() {
 }
 
 bookSearch();
+
+//everything below this is a placeholder so i can chat with amanda about what the search page will look like
+document
+  .querySelector('add-book') //so when you click the book from the search that you want it'll add that book to your collection
+  .addEventListener('add', bookAddHandler);
+
+const bookAddHandler = async (event) => {
+  event.preventDefault();
+
+    const response = await fetch(`/api/books`, {
+      method: 'POST',
+      body: JSON.stringify({title, authors, thumbnail, publishedDate, description, pageCount, user_id}),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert('Failed to add the book');
+    }
+  }
