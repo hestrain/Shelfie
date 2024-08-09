@@ -1,6 +1,5 @@
 // import all models here
 const User = require("./User");
-const ExampleData = require("./ExampleData");
 const Book = require("./Book");
 const Comment = require("./Comment");
 
