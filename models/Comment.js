@@ -26,6 +26,7 @@ Comment.init(
         model: 'user',
         key: 'id',
       },
+    
       // Reminder- add any new columns you'd like to the User model here
     },
   },
