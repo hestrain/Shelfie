@@ -1,8 +1,23 @@
 /* any css stylesheets can go in this folder */
 /* hint- remember to import them in your handlebars! */
+:root {
+  --teal: rgb(1, 137, 137); 
+}
+
+.font {
+  font-family: "Fredoka", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
 
 * {
-  background-color: blue;
+  background-color: white
+}
+
+.link-color {
+  color: var(--teal)
 }
 
 /* #header {
