@@ -27,25 +27,14 @@
 }
 
 .right-col {
-  color: var(--teal);
   display: flex;
   justify-content: center;
-  align-content: center;
-  
 }
 
-/* #nav {
-  display: flex;
+.title {
+  color: var(--teal);
+  font-size: 100px
 }
-
-#nav > ul {
-  display: flex;
-  list-style-type: none;
-  align-items: center;
-}
-
-#nav > ul > li {
-  margin: 0 10px;
 
 .skip-link {
   position: absolute;
