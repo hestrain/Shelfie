@@ -1,20 +1,20 @@
-<div>
-  <div>
-    <h2 id="login-heading">Login</h2>
-  </div>
-  <form id="login-form" aria-labelledby="login-heading" aria-describedby="login-instructions" novalidate>
-    <p id="login-instructions">Please enter your username and password to log in.</p>
-    <div>
-      <label for="username-input-login">Username</label>
-      <input type="text" id="username-input-login" name="username" aria-required="true" />
-    </div>
-    <div>
-      <label for="password-input-login">Password</label>
-      <input type="password" id="password-input-login" name="password" aria-required="true" />
-    </div>
-    <button type="submit" id="login-btn" aria-label="Log in">Login!</button>
-    <a href="/signup" aria-label="Go to sign up page">Sign up instead</a>
-  </form>
-</div>
+ <div class="row">
+            <div class="col">
+                <h1 class="font login-title">Shelfie</h1>
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputUsername1" class="form-label">Username</label>
+                        <input type="username" class="form-control" id="exampleInputUsername1" aria-describedby="userHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                   
+                    <button type="submit" class="btn btn-light">Log in</button>
+                    <a class="nav-link link-color font mt-3" href="#">Don't have an account? Sign up!</a>
+                </form>
+            </div>
+        </div>
 
 <script src="/js/login.js"></script>

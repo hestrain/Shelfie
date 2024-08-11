@@ -9,7 +9,7 @@
     <title>Shelfie</title>
 </head>
 <body>
-    <nav class="nav mb-2">
+    <nav class="nav">
         <a class="nav-link active link-color font" aria-current="page" href="#">Home</a>
         <a class="nav-link link-color font" href="#">My Collections</a>
         <a class="nav-link link-color font" href="#">Search Books</a>
@@ -21,8 +21,49 @@
         
       </nav>
       <main class="container">
+       <!-- {{{body}}} -->
+<div>
+    <!-- {{#each searchResults as | result |}} -->
+    <div class="row">
+        <div class="col">
+            <h1 class="font login-title">Search Books</h1>
+            <div>
+                <div class="mb-3">
+                    <label for="exampleInputName1" class="form-label">Name</label>
+                    <input type="search" class="form-control" id="exampleInputUsername1" aria-describedby="userHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputGenre1" class="form-label">Genre</label>
+                    <input type="search" class="form-control" id="exampleInputUsername1" aria-describedby="userHelp">
+                </div>
+               
+                <button type="login" class="btn btn-light">Search</button>
+            </div>
+            <div class="image">
+                <!-- <img src="{{result.thumbnail}}" class="img-thumbnail mt-3" alt="book cover">   -->
+            <img src="./../../public/images/813aV273-rL._AC_UF1000,1000_QL80_.jpg" class="img-thumbnail mt-3" alt="book cover">
+            </div>
+            <div class="add-book-button">
+                <button type="login" class="btn btn-light mt-3 mb-3">Add Book to Collection &#8853;</button>
+            </div>
+        </div>
+    </div>
+    <!-- {{/each}} -->
+</div>
        
-        <!-- {{{body}}} -->
+    
+
+
+
+
+
+
+
+
+
+
+
+
       </main>
 
       <footer class="footer">

@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <nav class="nav mb-2">
+    <nav class="nav">
         <a class="nav-link active link-color font" aria-current="page" href="#">Home</a>
         <a class="nav-link link-color font" href="#">My Collections</a>
         <a class="nav-link link-color font" href="#">Search Books</a>
@@ -23,28 +23,37 @@
         <!-- {{/if}} -->
 
     </nav>
-
-
-
-
-
     <main class="container">
-        <!-- {{{body}}} -->
 
         <div class="row">
-            <div class="col-6 left-col">
-                <img src="file:///Users/amandabrill/Desktop/Screenshot%202024-08-09%20at%203.49.03%E2%80%AFPM.png" alt="shelf image">
-                
+            <div class="col">
+                <h1 class="font login-title">Shelfie</h1>
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputUsername1" class="form-label">Username</label>
+                        <input type="username" class="form-control" id="exampleInputUsername1" aria-describedby="userHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                   
+                    <button type="login" class="btn btn-light">Log in</button>
+                    <a class="nav-link link-color font mt-3" href="#">Don't have an account? Sign up!</a>
+                </form>
             </div>
-            <div class="col-6 right-col">
-                <h1 class="font title">Shelfie</h1>
-            </div>
-           
         </div>
 
-       
 
 
+
+
+
+
+
+
+
+        <!-- {{{body}}} -->
     </main>
 
     <footer class="footer">
