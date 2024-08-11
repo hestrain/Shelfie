@@ -1,14 +1,17 @@
+
 const router = require("express").Router();
 
-// import any models you plan to use for this page's routes here
-const { Book } = require("../../models");
-
-let bookResults = JSON.parse(localStorage.getItem("bookResults"));
+// protects routes from unauthorized access
+const { withGuard } = require("../../utils/authGuard");
 
 // things that deal with the search functions
+
+const SearchedBook = require("../../models/SearchedBook");
+
 //get the search results and render them????? except i wrote that in bookAPI.js
 router.get("/search", withGuard, async, (req, res) => {
     try {
+      getBooks(req.body),
       res.render("search", {
         bookResults,
         loggedIn: req.session.logged_in,
@@ -17,9 +20,11 @@ router.get("/search", withGuard, async, (req, res) => {
       res.status(500).json(err);
     }
   });
+
+
   
   //to add the selected searched book ot the database
-  router.post("/addBook", async (req, res) => { 
+  router.post("/addBook", withGuard, async (req, res) => { //whys this one greys out
     try {
       const newBookData = await Book.create({
         title: req.body.title,
@@ -32,8 +37,25 @@ router.get("/search", withGuard, async, (req, res) => {
       });
       res.json(newBookData);
     } catch (err) {
-      res.status(500).json(err);
+      res.status(400).json(err);
     }
   });
+
+
+    //posts the search results to a new table and then redners them MAYBE LOL
+    router.post("/searchResults", async (req, res) => { 
+      try {
+          const searchResults = await SearchedBook.bulkCreate({
+         ...req.body
+        });
+        res.render('search', {
+          searchResults, 
+          logged_in: req.session.logged_in 
+        })
+        res.json(searchResults);
+      } catch (err) {
+        res.status(500).json(err);
+      }
+    });
   
   module.exports = router;
