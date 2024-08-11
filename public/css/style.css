@@ -79,6 +79,11 @@ img {
   justify-content: center;
 }
 
+.border-bottom {
+  display: flex;
+   border-bottom: solid;
+    margin: 10px;
+}
 
 
 
