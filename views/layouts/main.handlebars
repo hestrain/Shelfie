@@ -11,6 +11,24 @@
 </head>
 <body>
     
+
+ <nav class="nav mb-2">
+        <a class="nav-link active link-color font" aria-current="page" href="/">Home</a>
+        <a class="nav-link link-color font" href="/page-one">My Collections</a>
+        <a class="nav-link link-color font" href="/search">Search Books</a>
+        {{#if loggedIn}}
+        <a class="nav-link link-color font" href="#">Logout</a>
+        {{else}}
+        <a class="nav-link link-color font" href="/login">Login</a>
+        {{/if}}
+        
+      </nav>
+
+
+
+  
+    {{!-- <!-- Skip Link -->
+
  <nav class="nav mb-2" role="navigation" aria-label="Main Navigation">
     <a class="nav-link active link-color font" aria-current="page" href="/home">Home</a>
     <a class="nav-link link-color font" href="/page-one">My Collections</a>
@@ -24,6 +42,7 @@
 
 
   <!-- Skip Link -->
+
     <a href="#main-content" class="skip-link">Skip to main content</a>
      <!--back to top button-->
      <a href="#top" class="back-to-top">Back to Top</a>
