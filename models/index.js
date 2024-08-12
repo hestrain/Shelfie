@@ -2,6 +2,7 @@
 const User = require("./User");
 const Book = require("./Book");
 const Comment = require("./Comment");
+const SearchedBook = require("./SearchedBook");
 
 // IN DEVELOPMENT: db pathways; User has many Books and many Comments. Books have many Comments. Comments connect to single User and single Book through BookComment
 User.hasMany(Book, {
@@ -32,4 +33,4 @@ Book.belongsTo(User, {
 })
 
 // export all models here
-module.exports = { User, Book, Comment };
+module.exports = { User, Book, Comment, SearchedBook };
