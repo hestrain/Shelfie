@@ -1,7 +1,6 @@
 <div>
   {{! searchResults comes from the data being passed in the res.render on .js! }}
-  <header>Hello does this work</header>
-  {{#each books as | result |}}
+  {{!-- {{#each books as | result |}} --}}
 
 
 <div class="row">
@@ -20,26 +19,15 @@
                 <button type="login" class="btn btn-light">Search</button>
             </div>
             <div class="image">
-                <!-- <img src="{{result.thumbnail}}" class="img-thumbnail mt-3" alt="book cover">   -->
-            <img src="./../../public/images/813aV273-rL._AC_UF1000,1000_QL80_.jpg" class="img-thumbnail mt-3" alt="book cover">
+                 <img src="{{result.thumbnail}}" class="img-thumbnail mt-3" alt="book cover"> 
+            {{!-- <img src="./../../public/images/813aV273-rL._AC_UF1000,1000_QL80_.jpg" class="img-thumbnail mt-3" alt="book cover"> --}}
             </div>
             <div class="add-book-button">
                 <button type="login" class="btn btn-light mt-3 mb-3">Add Book to Collection &#8853;</button>
             </div>
 
-    <div class="book-zone">
-      <div class="card book-info" id="{{@index}}" style="width: 18rem;">
-        <img src="{{result.thumbnail}}" class="card-img-top" alt="book cover for {{result.title}}" />
-        <div class="card-body">
-          <h3 class="card-title">{{result.title}}</h3>
-          {{#each result.authors as |author|}}
-          <h5>{{author}}</h5>
-          {{/each}}
-          <p class="card-text">{{result.description}}</p>
-
-        </div>
     </div>
-    {{/each}}
+    {{!-- {{/each}} --}}
 </div>
 
 <script src="/js/bookApi.js"></script>
