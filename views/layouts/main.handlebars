@@ -11,6 +11,7 @@
 </head>
 <body>
     
+
  <nav class="nav mb-2">
         <a class="nav-link active link-color font" aria-current="page" href="/">Home</a>
         <a class="nav-link link-color font" href="/page-one">My Collections</a>
@@ -27,6 +28,21 @@
 
   
     {{!-- <!-- Skip Link -->
+
+ <nav class="nav mb-2" role="navigation" aria-label="Main Navigation">
+    <a class="nav-link active link-color font" aria-current="page" href="/home">Home</a>
+    <a class="nav-link link-color font" href="/page-one">My Collections</a>
+    <a class="nav-link link-color font" href="/search">Search Books</a>
+    {{#if loggedIn}}
+        <a class="nav-link link-color font" href="#" aria-label="Logout">Logout</a>
+    {{else}}
+        <a class="nav-link link-color font" href="/login" aria-label="Login">Login</a>
+    {{/if}}
+</nav>
+
+
+  <!-- Skip Link -->
+
     <a href="#main-content" class="skip-link">Skip to main content</a>
      <!--back to top button-->
      <a href="#top" class="back-to-top">Back to Top</a>
@@ -35,23 +51,7 @@
           <!--focus Button -->
           <button id="focus-button" class="focusbtn">Focus Input</button>
 <!-- Example input field to focus -->
-  <input type="text" id="myInput" placeholder="Focus me when button is clicked">
-
-    {{! Navbar }}
-    <nav id="nav" role="navigation" aria-label="Main Navigation">
-      <ul>
-        <li><a href="/" aria-current="page">Home</a></li>
-        <li><a href="/pageOne">Page One</a></li>
-
-        {{#if loggedIn}}
-        <a class="nav-link link-color font" href="#">Logout</a>
-        {{else}}
-        <a class="nav-link link-color font" href="#">Login</a>
-        {{/if}} 
-        
-      </nav> --}}
-
-
+  <input type="text" id="myInput" class="fwclicked" placeholder="Focus me when button is clicked">
 
 
       <main class="container">
@@ -74,5 +74,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="./public/js/accessibilty.js"></script>
+</body>
 </body>
 </html>

@@ -1,7 +1,7 @@
 const router = require("express").Router();
 
 // Import any models you plan to use for data's routes here
-const { ExampleData, User } = require("../models/");
+const { ExampleData, User, SearchedBook, Book } = require("../models/");
 
 // If you would like to use an authGuard middleware, import it here
 
@@ -29,14 +29,21 @@ router.get("/", async (req, res) => {
 // add a get / (landing page) route here
 router.get("/search", async (req, res) => {
   try {
+    const searchResults = await SearchedBook.findAll();
     // Reminder- We're passing the examples data to the home handlebars template here!
     // Reminder- We're also passing the loggedIn status to the home template here so that we can conditionally render items if the user is logged in or not (like we do with the navbar using `{{if loggedIn}}`).
+    console.log("*****************LOOK HERE**********************");
+
+    console.log(searchResults);
+    const books = searchResults.map((book)=> book.get({plain: true}))
     res.render("search", {
-      examples,
-      loggedIn: req.session.logged_in,
-      username: req.session.username,
+      books
+      // loggedIn: req.session.logged_in,
+      // username: req.session.username,
     });
   } catch (err) {
+    console.log(err);
+    
     res.status(500).json(err);
   }
 });
