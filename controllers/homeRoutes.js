@@ -8,16 +8,15 @@ const { ExampleData, User, SearchedBook, Book } = require("../models/");
 // add a get / (landing page) route here
 router.get("/", async (req, res) => {
   try {
-    const exampleData = await ExampleData.findAll({
-      include: [User],
-    });
+    // const exampleData = await ExampleData.findAll({
+    //   include: [User],
+    // });
 
-    const examples = exampleData.map((example) => example.get({ plain: true }));
+    // const examples = exampleData.map((example) => example.get({ plain: true }));
 
     // Reminder- We're passing the examples data to the home handlebars template here!
     // Reminder- We're also passing the loggedIn status to the home template here so that we can conditionally render items if the user is logged in or not (like we do with the navbar using `{{if loggedIn}}`).
     res.render("home", {
-      examples,
       loggedIn: req.session.logged_in,
       username: req.session.username,
     });
@@ -26,7 +25,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// add a get / (landing page) route here
+// get for search
 router.get("/search", async (req, res) => {
   try {
     const searchResults = await SearchedBook.findAll();
