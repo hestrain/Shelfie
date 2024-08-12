@@ -1,7 +1,4 @@
 
-// import any models you plan to use for this page's routes here
-const { Book } = require("../../models");
-
 const bookKey = 'AIzaSyDHEnaX2QUg8xYq_F9TdxEXKe_UElIeU9A'; //we probably want a way to encode this?
 // let searchedBook =`infinite jest`; //this is a placeholder search for testing and will become from user input
 const maxResults = 6; //limits results to 6
@@ -23,8 +20,6 @@ function getBooks(searchedBook) {
       return response.json();
     })
     .then(function (books) {
-      console.log("BOOK INFO \n----------");
-
       for (let i = 0; i < books.items.length; i++) {
         //this makes it easier to parse through the data
         const book = books.items[i];
@@ -34,8 +29,9 @@ function getBooks(searchedBook) {
           tempId: i,
           title: book.volumeInfo.title,
           authors: book.volumeInfo.authors,
-          thumbnail: book.volumeInfo.imageLinks.thumbnail,
           publishedDate: book.volumeInfo.publishedDate,
+          //fill with placeholder link DO THIS
+          thumbnail: (book.volumeInfo.imageLinks) ? book.volumeInfo.imageLinks.thumbnail : null , //replace the null w/placeholder image ink
           description: book.volumeInfo.description,
           pageCount: book.volumeInfo.pageCount,
         };
@@ -43,9 +39,6 @@ function getBooks(searchedBook) {
         //adds the books to the array of searched books
         bookResults.push(newBook);
       }
-      //log em to check the results for now
-      console.log(bookResults);
-
       //then i want it to take us to the search results page and render these (becuase you can search on any page)
       //then i need to get the information to talk ot the routes page for posting purposes....
 
@@ -61,35 +54,36 @@ function getBooks(searchedBook) {
 // }
 
 const searchHandler = async (event) => {
-  event.preventDefault();
+  // event.preventDefault();
   //insert document query for the search button in here
-  const searchedBook = document.querySelector('#search-query').value.trim();
+  // const searchedBook = document.querySelector('#search-query').value.trim();
+  const searchedBook = "the hobbit";
+  searchResults = getBooks(searchedBook);
 
-  getBooks(searchedBook);
-
-  const response = await fetch (`/api/searchRoutes`, {
+  const response = await fetch (`/api/search/searchResults`, {
     method: 'POST',
-    body: JSPM.stringify(searchResults),
+    body: JSON.stringify(searchResults),
     headers: {
       'Content-Type': 'application/json',
     },
   })
-
-
+console.log(response);
 
 }
 
-//we dont have these on the page yet
-document
-  .querySelector('.search-btn')
-  .addEventListener('submit', searchHandler);
+searchHandler();
+
+// //we dont have these on the page yet
+// document
+//   .querySelector('.search-btn')
+//   .addEventListener('submit', searchHandler);
 
 
 
 //everything below this is a placeholder so i can chat with amanda about what the search page will look like
-document
-  .querySelector('.book-info') //so when you click the book from the search that you want it'll add that book to your collection
-  .addEventListener('add', bookAddHandler);
+// document
+//   .querySelector('.book-info') //so when you click the book from the search that you want it'll add that book to your collection
+//   .addEventListener('add', bookAddHandler);
 
 const bookAddHandler = async (event) => {
   event.preventDefault();
@@ -106,6 +100,8 @@ const bookAddHandler = async (event) => {
 
     //look through search result array to find marching id/imdb id
     const result = searchResults.find(({ tempId }) => tempId == clickedId);
+    console.log(`___________THESE RESULTS________________`);
+    
     console.log(result); //log to check
 
   const bookToAdd = {

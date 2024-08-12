@@ -26,6 +26,21 @@ router.get("/", async (req, res) => {
   }
 });
 
+// add a get / (landing page) route here
+router.get("/search", async (req, res) => {
+  try {
+    // Reminder- We're passing the examples data to the home handlebars template here!
+    // Reminder- We're also passing the loggedIn status to the home template here so that we can conditionally render items if the user is logged in or not (like we do with the navbar using `{{if loggedIn}}`).
+    res.render("search", {
+      examples,
+      loggedIn: req.session.logged_in,
+      username: req.session.username,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // add a get /login route here
 router.get("/login", (req, res) => {
   try {
