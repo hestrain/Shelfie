@@ -12,13 +12,7 @@
           {{/each}}
           <p class="card-text">{{resut.description}}</p>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Published: {{result.publishedDate}}</li>
-          <li class="list-group-item">Page Count: {{result.pageCount}}</li>
-        </ul>
-        <button type="add" class="btn btn-info add-book" id="add-book-{{@index}}">Add Book To Collection</button>
-      </div>
     </div>
-  {{/each}}
+    {{/each}} 
 </div>
 <script src="/js/bookApi.js"></script>

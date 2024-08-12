@@ -1,22 +1,21 @@
-<div>
-  <div>
-    <h2 id="signup-heading">Sign Up</h2>
-  </div>
-  <div id="signup" role="tabpanel" aria-labelledby="signup-heading">
-    <form id="signup-form" aria-describedby="signup-instructions" novalidate>
-      <p id="signup-instructions">All fields are required.</p>
-      <div>
-        <label for="username-input-signup">Username</label>
-        <input type="text" id="username-input-signup" name="username" aria-required="true" />
-      </div>
-      <div>
-        <label for="password-input-signup">Password</label>
-        <input type="password" id="password-input-signup" name="password" aria-required="true" />
-      </div>
-      <button type="submit" id="signup-btn" aria-label="Sign up">Signup!</button>
-      <a href="/login" aria-label="Go to login page">Login instead</a>
-    </form>
-  </div>
-</div>
+<div class="row">
+            <div class="col">
+                <h1 class="font login-title">Shelfie</h1>
+                <h2 class="font signup-title">Sign Up!</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputUsername1" class="form-label">Username(required)</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password(required)</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                   
+                    <button type="submit" class="btn btn-light">Sign Up</button>
+                    <a class="nav-link link-color font mt-3" href="#">Login instead</a>
+                </form>
+            </div>
+        </div>
 
 <script src="/js/signup.js"></script>

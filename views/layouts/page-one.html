@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <nav class="nav mb-2">
+    <nav class="nav">
         <a class="nav-link active link-color font" aria-current="page" href="#">Home</a>
         <a class="nav-link link-color font" href="#">My Collections</a>
         <a class="nav-link link-color font" href="#">Search Books</a>
@@ -23,26 +23,57 @@
         <!-- {{/if}} -->
 
     </nav>
-
-
-
-
-
     <main class="container">
+
         <!-- {{{body}}} -->
 
         <div class="row">
-            <div class="col-6 left-col">
-                <img src="file:///Users/amandabrill/Desktop/Screenshot%202024-08-09%20at%203.49.03%E2%80%AFPM.png" alt="shelf image">
+            <div class="col">
+                <h1 class="font login-title">My Collections</h1>
+            </div>
+        </div>
+        <div class="row mb-4 books border-bottom">
+            <div class="col-md-5">
+                <h2>
+
+                    <a href="/project/{{project.id}}">Book Name</a>
+                </h2>
                 
+                <p>Star rating widget HERE</p>
             </div>
-            <div class="col-6 right-col">
-                <h1 class="font title">Shelfie</h1>
+            <div class="col-md-7">
+                <p>
+                    {{Comments}}
+                </p>
             </div>
-           
+        </div>
+        
+        <div class="row mb-4 books border-bottom">
+            <div class="col-md-5">
+                <h2>
+
+                    <a href="/project/{{project.id}}">Book Name</a>
+                </h2>
+                
+                <p>Star rating widget HERE</p>
+            </div>
+            <div class="col-md-7">
+                <p>
+                    {{Comments}}
+                </p>
+            </div>
         </div>
 
-       
+
+
+
+
+
+
+
+
+
+
 
 
     </main>
