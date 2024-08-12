@@ -17,7 +17,7 @@
 <div align="center">
   <a href="https://github.com/hestrain/Shelfie">
   <!-- TODO: Correct this file path to a logo if you would like one; otherwise, delete this a href -->
-    <img src="./public/images/" alt="Logo" width="80" height="80">
+    <img src="./public/images/Shelfie Logo Teal-Black.png" alt="Logo" width="320" height="160">
   </a>
 
 <!-- TODO: Edit App name -->
