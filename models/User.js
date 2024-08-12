@@ -29,6 +29,10 @@ User.init(
         len: [8, Infinity],
       },
     },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     // on password creation, hashes password before storing
