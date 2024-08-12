@@ -186,3 +186,7 @@ img {
   width: 108.11px;
   height: 42.5;
 }
+
+.add-book-button :hover{
+  background-color: var(--teal);
+}

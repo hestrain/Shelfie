@@ -40,14 +40,33 @@ router.post("/addBook", async (req, res) => {
 //posts the search results to a new table and then redners them MAYBE LOL
 router.post("/searchResults", async (req, res) => {
   try {
+
+    console.log("we're in the post route");
+    
     const searchResults = req.body;
 
-    await SearchedBook.truncate();
+    await SearchedBook.destroy({ truncate: true, restartIdentity: true });
+    
 
     const results = await SearchedBook.bulkCreate(searchResults);
-
     res.json(searchResults);
   } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/searchResults", async (req, res) => {
+  try {
+    const searchedBooks = await SearchedBook.findAll();
+    console.log(searchedBooks);
+    
+    const books = searchedBooks.map((book)=> book.get({plain: true}))
+    res.json(books);
+    return books;
+
+  } catch (err) {
+    console.log(err);
+    
     res.status(500).json(err);
   }
 });

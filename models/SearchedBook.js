@@ -45,6 +45,7 @@ SearchedBook.init(
     freezeTableName: true,
     underscored: true,
     modelName: "searchedbook",
+    timestamps: false,
   }
 );
 
