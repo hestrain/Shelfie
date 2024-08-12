@@ -10,10 +10,10 @@ const {Book, SearchedBook} = require("../../models");
 const { logger } = require("sequelize/lib/utils/logger");
 
 //get the search results and render them????? except i wrote that in bookAPI.js
-router.get("/", withGuard, async (req, res) => {
+router.get("/searchResults", withGuard, async (req, res) => {
     try {
       getBooks(req.body),
-      res.render("search", {
+      res.render("searchResults", {
         bookResults,
         loggedIn: req.session.logged_in,
       });

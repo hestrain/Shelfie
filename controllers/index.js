@@ -8,6 +8,6 @@ const pageOneRoutes = require("./pageOneRoutes");
 // Connect the routes to the router here
 router.use("/", homeRoutes);
 router.use("/api", apiRoutes);
-router.use("/pageOne", pageOneRoutes);
+router.use("/page-one", pageOneRoutes);
 
 module.exports = router;

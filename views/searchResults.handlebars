@@ -1,0 +1,19 @@
+<div>
+  {{! searchResults comes from the data being passed in the res.render on .js! }}
+  <header>Hello does this work</header>
+  {{#each books as | result |}}
+
+    <div class="book-zone">
+      <div class="card book-info" id="{{@index}}" style="width: 18rem;">
+        <img src="{{result.thumbnail}}" class="card-img-top" alt="book cover for {{result.title}}" />
+        <div class="card-body">
+          <h3 class="card-title">{{result.title}}</h3>
+          {{#each result.authors as |author|}}
+          <h5>{{author}}</h5>
+          {{/each}}
+          <p class="card-text">{{result.description}}</p>
+        </div>
+    </div>
+    {{/each}} 
+</div>
+<script src="/js/bookApi.js"></script>
