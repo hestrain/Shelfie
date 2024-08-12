@@ -87,20 +87,8 @@ img {
 
 
 
+.btn-styled {
 
-.skip-link {
-  position: absolute;
-  /* top: -40px; */
-  /* left: 0; 
-  background: #000;
-  color: #fff;
-  padding: 8px;
-  z-index: 100;
-  text-decoration: none;*/
-  position: fixed !important;
-  bottom: 150px  !important;
-  right: 20px;
-  z-index: 1000;
   background-color: var(--teal);
   color: #fff;
   padding: 10px 20px;
@@ -108,85 +96,45 @@ img {
   border-radius: 4px;
   transition: background-color 0.3s ease;
   margin-left: 10px;
-  width: 108.11px;
-  height: 42.5;
+  margin-top: 10px
 }
 
-.skip-link:focus {
-  top: 0;
-}
-
-.back-to-top {
-    display: inline-block;
-    background-color: var(--teal);
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.back-to-top:hover {
-    background-color: #0056b3; /* Adjust hover color */
-}
-
-.readbtn {
-  position: fixed !important;
-  bottom: 75px  !important;
-  right: 20px;
-  z-index: 1000;
-  background-color: var(--teal);
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-  margin-left: 10px;
-  width: 108.11px;
-  height: 42.5;
-}
-
-.readbtn:hover {
+.btn-styled:hover {
 
       background-color: #0056b3;
  
 }
-.focusbtn {
-  position: fixed !important;
-  bottom: 250px  !important;
-  right: 20px;
-  z-index: 1000;
-  background-color: var(--teal);
-  color: #fff;
-  padding: 10px 20px;
+
+.btn-styled a {
+  color: white;
   text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-  margin-left: 10px;
-  width: 108.11px;
-  height: 42.5;
+  background-color: transparent;
 
 }
-.fwclicked {
-  position: fixed !important;
-  bottom: 325px  !important;
-  right: 20px;
-  z-index: 1000;
-  background-color: var(--teal);
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-  margin-left: 10px;
-  width: 108.11px;
-  height: 42.5;
+
+#pandas-rock {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  z-index: 1000px;
 }
+
+#im-right {
+  background-color: transparent;
+  border: none;
+}
+
 
 .add-book-button :hover{
   background-color: var(--teal);
+
+
+#i-btn {
+  background-color: transparent;
+
+ 
+.home-logo {
+  width: 480px;
+  height: 240px;
+
 }
