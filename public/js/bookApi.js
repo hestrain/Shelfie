@@ -1,3 +1,7 @@
+
+// import any models you plan to use for this page's routes here
+const { Book } = require("../../models");
+
 const bookKey = 'AIzaSyDHEnaX2QUg8xYq_F9TdxEXKe_UElIeU9A'; //we probably want a way to encode this?
 // let searchedBook =`infinite jest`; //this is a placeholder search for testing and will become from user input
 const maxResults = 6; //limits results to 6
@@ -41,17 +45,44 @@ function getBooks(searchedBook) {
       }
       //log em to check the results for now
       console.log(bookResults);
-      localStorage.setItem("bookResults", JSON.stringify(bookResults));
+
+      //then i want it to take us to the search results page and render these (becuase you can search on any page)
+      //then i need to get the information to talk ot the routes page for posting purposes....
+
       return bookResults;
     }
 )};
 
 //auto calls our getBooks function (for now)
-function bookSearch() {
-  let searchedBook =`slow horses`; //this is a placeholder search for testing and will become from user input
+// function bookSearch() {
+//   let searchedBook =`slow horses`; //this is a placeholder search for testing and will become from user input
+
+//   getBooks(searchedBook);
+// }
+
+const searchHandler = async (event) => {
+  event.preventDefault();
+  //insert document query for the search button in here
+  const searchedBook = document.querySelector('#search-query').value.trim();
 
   getBooks(searchedBook);
+
+  const response = await fetch (`/api/searchRoutes`, {
+    method: 'POST',
+    body: JSPM.stringify(searchResults),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+
+
+
 }
+
+//we dont have these on the page yet
+document
+  .querySelector('.search-btn')
+  .addEventListener('submit', searchHandler);
 
 
 
@@ -86,7 +117,7 @@ const bookAddHandler = async (event) => {
     pageCount: result.pageCount,
   }
 
-    const response = await fetch(`/api/addBook`, {
+    const response = await fetch(`/`, {
       method: 'POST',
       body: JSON.stringify({bookToAdd}),
       headers: {
@@ -101,4 +132,4 @@ const bookAddHandler = async (event) => {
     }
   }
 
-  window.onload = bookSearch();
+  // window.onload = bookSearch();
