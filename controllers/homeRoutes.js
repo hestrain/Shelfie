@@ -28,6 +28,17 @@ router.get("/", async (req, res) => {
 // get for search
 router.get("/search", async (req, res) => {
   try {
+    res.render("search");
+  } catch (err) {
+    console.log(err);
+    
+    res.status(500).json(err);
+  }
+});
+
+// get for search
+router.get("/search-results", async (req, res) => {
+  try {
     const searchResults = await SearchedBook.findAll();
     // Reminder- We're passing the examples data to the home handlebars template here!
     // Reminder- We're also passing the loggedIn status to the home template here so that we can conditionally render items if the user is logged in or not (like we do with the navbar using `{{if loggedIn}}`).
@@ -35,7 +46,7 @@ router.get("/search", async (req, res) => {
 
     console.log(searchResults);
     const books = searchResults.map((book)=> book.get({plain: true}))
-    res.render("search", {
+    res.render("search-results", {
       books
       // loggedIn: req.session.logged_in,
       // username: req.session.username,
