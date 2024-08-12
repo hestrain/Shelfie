@@ -124,6 +124,11 @@ img {
   border: none;
 }
 
+
 #i-btn {
   background-color: transparent;
+=======
+.home-logo {
+  width: 480px;
+  height: 240px;
 }
