@@ -6,28 +6,28 @@
 <div class="row">
         <div class="col">
             <h1 class="font login-title">Search Books</h1>
-            <div>
+            <div id="search-bar">
                 <div class="mb-3">
-                    <label for="exampleInputName1" class="form-label">Name</label>
-                    <input type="search" class="form-control" id="exampleInputUsername1" aria-describedby="userHelp">
+                    <label for="titlesearch" class="form-label">Name</label>
+                    <input type="search" class="form-control" id="titlesearch" aria-describedby="userHelp">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputGenre1" class="form-label">Genre</label>
-                    <input type="search" class="form-control" id="exampleInputUsername1" aria-describedby="userHelp">
+                    <label for="genresearch" class="form-label">Genre</label>
+                    <input type="search" class="form-control" id="genresearch" aria-describedby="userHelp">
                 </div>
                
-                <button type="login" class="btn btn-light">Search</button>
+                <button type="submit" class="btn btn-light search-btn" id="search-btn">Search</button>
             </div>
-            <div class="image">
+            {{!-- <div class="image">
                  <img src="{{result.thumbnail}}" class="img-thumbnail mt-3" alt="book cover"> 
             {{!-- <img src="./../../public/images/813aV273-rL._AC_UF1000,1000_QL80_.jpg" class="img-thumbnail mt-3" alt="book cover"> --}}
             </div>
             <div class="add-book-button">
-                <button type="login" class="btn btn-light mt-3 mb-3">Add Book to Collection &#8853;</button>
-            </div>
-
+                <button type="add" class="btn btn-light mt-3 mb-3">Add Book to Collection &#8853;</button>
+            </div> --}}
     </div>
     {{!-- {{/each}} --}}
 </div>
 
-<script src="/js/bookApi.js"></script>
+<script src="/js/search.js"></script>
+{{!-- <script src="/js/bookApi.js"></script> --}}

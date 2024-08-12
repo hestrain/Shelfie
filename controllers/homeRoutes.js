@@ -50,7 +50,8 @@ router.get("/search-results", async (req, res) => {
       books
       // loggedIn: req.session.logged_in,
       // username: req.session.username,
-    });
+    })
+    // document.location.replace("/search-results");
   } catch (err) {
     console.log(err);
     

@@ -125,10 +125,16 @@ img {
 }
 
 
+.add-book-button :hover{
+  background-color: var(--teal);
+
+
 #i-btn {
   background-color: transparent;
-=======
+
+ 
 .home-logo {
   width: 480px;
   height: 240px;
+
 }
