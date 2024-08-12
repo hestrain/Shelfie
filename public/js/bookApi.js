@@ -41,10 +41,20 @@ function getBooks(searchedBook) {
       }
       //then i want it to take us to the search results page and render these (becuase you can search on any page)
       //then i need to get the information to talk ot the routes page for posting purposes....
-
+      console.log(bookResults);
+      // bookAddHandler();
       return bookResults;
-    }
-)};
+    })
+    .then(function (books) {
+      console.log(books);
+      
+      fetch("/api/search/searchResults", {
+        method: "POST",
+        body: JSON.stringify(books),
+        headers: {"Content-Type": "application/json"}
+      })
+    })
+};
 
 //auto calls our getBooks function (for now)
 // function bookSearch() {
@@ -57,18 +67,11 @@ const searchHandler = async (event) => {
   // event.preventDefault();
   //insert document query for the search button in here
   // const searchedBook = document.querySelector('#search-query').value.trim();
-  const searchedBook = "the hobbit";
-  searchResults = getBooks(searchedBook);
+  const searchedBook = "lord of the rings";
+  const searchResults = await getBooks(searchedBook);
 
-  const response = await fetch (`/api/search/searchResults`, {
-    method: 'POST',
-    body: JSON.stringify(searchResults),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-console.log(response);
-
+  console.log(searchResults);
+  
 }
 
 searchHandler();
@@ -86,20 +89,20 @@ searchHandler();
 //   .addEventListener('add', bookAddHandler);
 
 const bookAddHandler = async (event) => {
-  event.preventDefault();
+  // event.preventDefault();
 
-  const element = event.target;
-  console.log(element);
+  // const element = event.target;
+  // console.log(element);
 
-    const clickedId = element.getAttribute("id");
+    // const clickedId = element.getAttribute("id");
+    const clickedId = 1;
     console.log(clickedId);
 
     //get the search result array to search through it
-    searchResults = JSON.parse(localStorage.getItem("searchResults"));
-    console.log(searchResults);
+    console.log(bookResults);
 
     //look through search result array to find marching id/imdb id
-    const result = searchResults.find(({ tempId }) => tempId == clickedId);
+    const result = bookResults.find(({ tempId }) => tempId == clickedId);
     console.log(`___________THESE RESULTS________________`);
     
     console.log(result); //log to check
@@ -113,16 +116,20 @@ const bookAddHandler = async (event) => {
     pageCount: result.pageCount,
   }
 
-    const response = await fetch(`/`, {
+  console.log(bookToAdd);
+  
+    const response = await fetch(`/api/search/addBook`, {
       method: 'POST',
-      body: JSON.stringify({bookToAdd}),
+      body: JSON.stringify(bookToAdd),
       headers: {
         'Content-Type': 'application/json',
       },
     });
 
     if (response.ok) {
-      document.location.replace('/profile'); //lol where do we want this to go
+      // document.location.replace('/profile'); //lol where do we want this to go
+      console.log(response);
+      
     } else {
       alert('Failed to add the book');
     }

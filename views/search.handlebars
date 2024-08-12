@@ -1,6 +1,7 @@
 <div>
   {{! searchResults comes from the data being passed in the res.render on .js! }}
-  {{#each searchResults as | result |}}
+  <header>Hello does this work</header>
+  {{#each books as | result |}}
 
     <div class="book-zone">
       <div class="card book-info" id="{{@index}}" style="width: 18rem;">
@@ -10,7 +11,7 @@
           {{#each result.authors as |author|}}
           <h5>{{author}}</h5>
           {{/each}}
-          <p class="card-text">{{resut.description}}</p>
+          <p class="card-text">{{result.description}}</p>
         </div>
     </div>
     {{/each}} 
