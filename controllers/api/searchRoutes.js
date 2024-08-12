@@ -9,7 +9,7 @@ const { withGuard } = require("../../utils/authGuard");
 const SearchedBook = require("../../models/SearchedBook");
 
 //get the search results and render them????? except i wrote that in bookAPI.js
-router.get("/search", withGuard, async, (req, res) => {
+router.get("/", withGuard, async (req, res) => {
     try {
       getBooks(req.body),
       res.render("search", {
