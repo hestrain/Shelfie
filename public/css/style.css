@@ -11,9 +11,6 @@
   font-style: normal;
 }
 
-* {
-  background-color: white;
-}
 
 .link-color {
   color: var(--teal);
