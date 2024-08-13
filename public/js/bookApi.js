@@ -70,6 +70,7 @@ function getBooks(searchedBook) {
   // document.location.replace("/search-results")});
 }
 
+
 //function that handles the search query from the /search page. takes user input and feeds it to the above API
 const searchHandler = async function (event) {
   event.preventDefault();
@@ -90,22 +91,27 @@ const bookAddHandler = async (event) => {
   const element = event.target;
   console.log(element.parentElement.parentElement);
 
-  const clickedId = element.parentElement.parentElement.getAttribute("id");
+  let clickedId = element.parentElement.parentElement.getAttribute("id");
   // const clickedId = 1;
   console.log(`THE ID OF THE CLICKED BOOK IS ${clickedId}`);
   console.log(
     `IT SHOULD MATCH THE ID OF ONE OF THESE BOOKS: ---------------------`
   );
-  console.log(searchResults);
+  clickedId++;
+  const result = await fetch(`/api/search/searchResults/${clickedId}`, {
+    method: "GET",
+  header: {"Content-Type": "application/json"}});
+
+  console.log(result.data);
 
   //look through search result array to find marching id
-  const result = searchResults.find(({ id }) => id == clickedId);
+  // const result = searchResults.find(({ id }) => id == clickedId);
 
   console.log(
     `___________THIS SHOULD BE THE BOOK THAT MATCHED THE CLICKED ID________________`
   );
 
-  console.log(result); //log to check
+  // console.log(result); //log to check
 
   const bookToAdd = {
     title: result.title,
@@ -144,14 +150,12 @@ const pageChecker = function () {
     document
       .querySelector("#search-btn")
       .addEventListener("click", searchHandler);
-  } else {
+  } else if (window.location.pathname === "/search-results"){
     //event listener for the add book button
     const addBook = document.querySelector(".add-book"); //so when you click the book from the search that you want it'll add that book to your collection
-
+    
     addBook.addEventListener("click", bookAddHandler);
 
-     searchResults = fetch("/api/search/searchResults", {
-      method: "GET"});
   }
 };
 //calls the function that checks the page

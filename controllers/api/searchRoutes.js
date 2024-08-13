@@ -58,6 +58,7 @@ router.post("/searchResults", async (req, res) => {
   }
 });
 
+//get all the searched books?
 router.get("/searchResults", async (req, res) => {
   try {
     const searchedBooks = await SearchedBook.findAll();
@@ -79,5 +80,24 @@ router.get("/searchResults", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+//get only the searched book with the matching id
+router.get("/searchResults/:id", async (req, res) => {
+  try {
+    const book = await SearchedBook.findByPk(req.params.id, {
+      // include: [{ model: SearchedBook }],
+    });
+
+    if (!SearchedBook) {
+      res.status(404).json({ message: 'No book from search found with that id!' });
+      return;
+    }
+
+    res.status(200).json(book);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 module.exports = router;
