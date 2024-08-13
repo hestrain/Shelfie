@@ -1,3 +1,5 @@
+//----------------CURRENTLY NOT USING THIS PAGE BUT WILL GO BACK TO USING IT TO CLEAN UP IF NEEDED--------------------
+
 const bookKey = 'AIzaSyDHEnaX2QUg8xYq_F9TdxEXKe_UElIeU9A'; //we probably want a way to encode this?
 // let searchedBook =`infinite jest`; //this is a placeholder search for testing and will become from user input
 const maxResults = 6; //limits results to 6
