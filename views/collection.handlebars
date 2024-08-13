@@ -1,23 +1,34 @@
-{{#each books as |book| }}
+
 <div class="row">
             <div class="col">
                 <h1 class="font login-title">My Collections</h1>
             </div>
         </div>
+     
         <div class="row mb-4 books border-bottom">
+               {{!-- {{#each books as |book| }} --}}
             <div class="col-md-5">
                 <h2>
-
-                    <a href="/book/{{book.id}}">Book Name</a>
+                    <a href="/book/">BOOK TITLE</a>
+                    <a href="/book/">{{book.title}}</a>
                 </h2>
                 
-                <p>Star rating widget HERE</p>
+                <span class="rating">
+                <span class="star glow">★★★★★</span>
+                </span>
+                 {{!-- {{/each}} --}}
             </div>
+           
             <div class="col-md-7">
+                 {{!-- {{#each comments as |comment|}} --}}
                 <p>
                     {{book.comments}}
                 </p>
+                 <p>
+                    Book Comments
+                </p>
+                {{!-- {{/each}} --}}
             </div>
         </div>
-        {{/each}}
+       
 <script src="/js/collection.js"></script>
