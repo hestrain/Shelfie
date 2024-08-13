@@ -104,7 +104,9 @@ img {
   border-radius: 4px;
   transition: background-color 0.3s ease;
   margin-left: 10px;
-  margin-top: 10px
+  margin-top: 10px;
+  flex: 1;
+  width: 100%;
 }
 
 .btn-styled:hover {
@@ -125,6 +127,7 @@ img {
   bottom: 5%;
   right: 5%;
   z-index: 1000px;
+  width: auto;
 }
 
 #dropup {
@@ -147,6 +150,80 @@ img {
 
 };
 
+.btn-styled i {
+  display: inline;
+}
+
+.btn-styled span {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .btn-styled span {
+    display: none; 
+  }
+
+  .btn-styled i {
+    display: inline; 
+
+  }
+
+  
+  .btn-styled {
+    padding: 10px; 
+    }
+}
+
+
+
+@media (min-width: 769px) {
+  .btn-styled span {
+    display: inline; 
+  }
+
+  .btn-styled i {
+    display: inline; 
+  }
+}
+@media (max-width: 480px) {
+  .btn-styled {
+    padding: 6px 10px; 
+    font-size: 12px; 
+  }
+
+  .btn-styled i {
+    font-size: 18px; 
+  }
+}
+
+
+.nav-link {
+  display: flex;
+  align-items: center;
+}
+
+
+.nav-text {
+  display: inline; 
+}
+
+
+.nav-link i {
+  display: inline; 
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  
+  .nav-text {
+    display: none; 
+  }
+  
+  /* Adjust icons to display on smaller screens */
+  .nav-link i {
+    margin-left: 0.5rem; 
+  }
+}
 
 .star {
   color: lightgray;
@@ -155,3 +232,4 @@ img {
 .star.glow {
   color: rgb(211, 218, 4);
 }
+
