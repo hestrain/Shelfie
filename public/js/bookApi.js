@@ -259,6 +259,7 @@ const pageChecker = function () {
       .addEventListener("click", searchHandler);
   } else if (window.location.pathname === "/search-results") {
     //on page load get the search results
+    genre = JSON.parse(localStorage.getItem("search"))
     getBooks(search);
     console.log("performing the search for" + search);
   }
