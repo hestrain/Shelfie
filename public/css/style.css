@@ -112,29 +112,29 @@ img {
 
 }
 
-#pandas-rock {
+#nestedbtn {
   position: fixed;
   bottom: 5%;
   right: 5%;
   z-index: 1000px;
 }
 
-#im-right {
+#dropup {
   background-color: transparent;
   border: none;
 }
 
 
 .add-book-button :hover{
-  background-color: var(--teal);
+  background-color: var(--teal)};
 
 
 #i-btn {
-  background-color: transparent;
+  background-color: transparent};
 
  
 .home-logo {
   width: 480px;
   height: 240px;
 
-}
+};
