@@ -1,4 +1,6 @@
 const router = require("express").Router();
+require("dotenv").config();
+const axios = require("axios");
 
 // protects routes from unauthorized access
 const { withGuard } = require("../../utils/authGuard");
@@ -50,7 +52,14 @@ router.post("/searchResults", async (req, res) => {
     
 
     const results = await SearchedBook.bulkCreate(searchResults);
-    res.json(searchResults);
+    // res.json(searchResults);
+
+    // const books = searchResults.map((book)=> book.get({plain: true}))
+    res.redirect("/search-results"
+      // searchResults
+      // loggedIn: req.session.logged_in,
+      // username: req.session.username,
+    )
   } catch (err) {
     console.log(err);
     
@@ -98,6 +107,29 @@ router.get("/searchResults/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get("/results/:name", async (req,res) => {
+  try{
+  const name = req.params.name;
+  const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${name}&maxResults=6&key=${process.env.API_KEY}`);
+  // const bookResults = await response.json();
+  const books = response.data.items;
+  console.log(books);
+  
+for (let i = 0; i < books.length; i++) {
+  books[i].tempId = i+1;
+}
+res.render("search-results", {
+  books
+  // loggedIn: req.session.logged_in,
+  // username: req.session.username,
+})
+} catch(err) {
+  console.log(err);
+  
+  res.status(500).json(err);
+}
+})
 
 
 module.exports = router;
