@@ -7,6 +7,7 @@ const { withGuard } = require("../../utils/authGuard");
 
 const { Book, SearchedBook } = require("../../models");
 const { logger } = require("sequelize/lib/utils/logger");
+const { json } = require("sequelize");
 
 //get the search results and render them????? except i wrote that in bookAPI.js
 router.get("/search-results", withGuard, async (req, res) => {
@@ -57,20 +58,26 @@ router.post("/searchResults", async (req, res) => {
   }
 });
 
-// router.get("/searchResults", async (req, res) => {
-//   try {
-//     const searchedBooks = await SearchedBook.findAll();
-//     console.log(searchedBooks);
+router.get("/searchResults", async (req, res) => {
+  try {
+    const searchedBooks = await SearchedBook.findAll();
+    console.log("-----these are the searchedBooks from the GET route------");
+    console.log(searchedBooks);
     
-//     const books = searchedBooks.map((book)=> book.get({plain: true}))
-//     res.json(books);
-//     return books;
+    const books = searchedBooks.map((book)=> book.get({plain: true}))
+    console.log("--------THIS IS books FROM THE GET ROUTE");
+    console.log(books);
+    
+    // res.json(books);
+    res.status(200).json(books);
+    // console.log(json(books));
+    // return books;
 
-//   } catch (err) {
-//     console.log(err);
+  } catch (err) {
+    console.log(err);
     
-//     res.status(500).json(err);
-//   }
-// });
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
