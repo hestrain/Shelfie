@@ -144,37 +144,10 @@ npm run start
 
 [http://localhost:3001/](http://localhost:3001/)
 
-<!-- ROADMAP -->
-
-## Roadmap
-
-<!-- TODO: Plan out rough roadmap here -->
-
-#### MVP
-
-<!-- This is a nested check-box that displays a nice checked or unchecked list on your Github repo to show your visitor's a quick road map! -->
-
-- [ ] Front End
-
-  - [ ] User Auth
-  - [ ] User Profile Page
-    - [ ] Routing
-    - [ ] Styling
-  - [ ] Landing Page
-    - [ ] Routing
-    - [ ] Styling
-
-- [ ] Back End
-  - [X] User Auth
-  - [X] Models
-  - [X] Seeds
-  - [X] api Routing
-
 #### Future Development
 
-- [ ] Add Lines of future development ideas here
-- [ ] Add Lines of future development ideas here
-- [ ] Add Lines of future development ideas here
+- [ ] Add rating module, so that users can rate books
+- [ ] Develop comment database, so that users can comment on books and their experience reading
 
 See the [open issues](https://github.com/hestrain/Shelfie/issues) for a full list of proposed features (and known issues).
 
@@ -205,11 +178,11 @@ This project is licensed under the MIT license.
 
 <!-- TODO: Add your name, portfolio link, and email if you would like here -->
 
-[Heatherellen Strain](https://github.com/hestrain) - mary.panda.jackson@gmail.com
+[Heatherellen Strain](https://github.com/hestrain) - hestrain@gmail.com
 
-[Amanda Changa](https://github.com/mandi7469) - contributor.one@email.com
+[Amanda Changa](https://github.com/mandi7469) - mandi7469@aol.com
 
-[Reina Simms](https://github.com/Reina2024) - contributor.one@email.com
+[Reina Simms](https://github.com/Reina2024) - simmsreina@gmail.com
 
 [William Allred](https://github.com/AllredW) - allrewil@gmail.com
 
