@@ -14,9 +14,9 @@ const { json } = require("sequelize");
 //get the search results and render them????? except i wrote that in bookAPI.js
 router.get("/search-results", withGuard, async (req, res) => {
   try {
-    getBooks(req.body),
+    // getBooks(req.body),
       res.render("search-results", {
-        bookResults,
+        // bookResults,
         loggedIn: req.session.logged_in,
       });
   } catch (err) {

@@ -8,6 +8,8 @@ const maxResults = 6; //limits results to 6
 //this will hold the array of up to 6 search results
 let bookResults = [];
 let search = JSON.parse(localStorage.getItem("search"));
+let genre = JSON.parse(localStorage.getItem("genre"));
+
 console.log(search);
 
 // let searchResults = [];
@@ -99,7 +101,7 @@ function getBooks(searchedBook) {
         resultDesc.setAttribute("class", "card-text");
         resultDesc.setAttribute("style", "font-size:smaller;");
         resultDesc.textContent = book.description;
-    const bookBtnId = `add-btn ${i+1}`
+    const bookBtnId = `${i+1}`
         //add book button
         const addButton = document.createElement("button");
         addButton.setAttribute("type", "add");
@@ -150,12 +152,36 @@ const searchHandler = async function (event) {
   event.preventDefault();
   //document query for search bar
   const searchedBook = document.querySelector("#titlesearch").value.trim();
+  const genreSearch = document.querySelector("#genresearch").value.trim();
+
+  if(searchedBook && genreSearch){
+    console.log(`SEARCHING FOR: ${searchedBook} in ${genreSearch} genre`);
+    localStorage.setItem("search", JSON.stringify(searchedBook));
+    localStorage.setItem("genre", JSON.stringify(genreSearch));
+
+    window.location.replace("/search-results");
+
+
+  } else if(searchedBook && !genreSearch) {
+    console.log(`SEARCHING FOR: ${searchedBook}`);
+    localStorage.setItem("search", JSON.stringify(searchedBook));
+
+    window.location.replace("/search-results");
+
+
+  }else if(!searchedBook) {
+    const alertLocation = document.querySelector("#search-bar");
+    const alert = document.createElement("div");
+    alert.setAttribute("class", "alert alert-danger");
+    alert.setAttribute("role", "alert");
+    alert.textContent = "Please enter a book name in the search bar";
+    alertLocation.append(alert);
+  }
   //log to check what we're searching for
   console.log(`SEARCHING FOR: ${searchedBook}`);
 
   localStorage.setItem("search", JSON.stringify(searchedBook));
 
-  window.location.replace("/Users/heatherellenstrain/bootcamp/class/week8_aug5/Shelfie/public/html/searchtest-results.html");
 
   // //here are the search results
   // searchResults = await fetch(`/api/search/results/${searchedBook}`, {
@@ -169,54 +195,29 @@ const bookAddHandler = async (event) => {
   event.preventDefault();
   console.log(event.target);
 
-  const element = event.target;
-  console.log(element.parentElement.parentElement);
-
-  let clickedId = element.parentElement.parentElement.getAttribute("id");
-  // const clickedId = 1;
-  console.log(`THE ID OF THE CLICKED BOOK IS ${clickedId}`);
-  console.log(
-    `IT SHOULD MATCH THE ID OF ONE OF THESE BOOKS: ---------------------`
-  );
+  if(event.target.matches("button")){
+    const clickedId = event.target.getAttribute("id");
+    console.log(`THE ID OF THE CLICKED BOOK IS ${clickedId}`);
+    console.log(
+      `IT SHOULD MATCH THE ID OF ONE OF THESE BOOKS: ---------------------`
+    );
+    
+    // console.log(bookResults);
   
-  // console.log(bookResults);
-
-  let result;
-for (let i = 0; i < bookResults.length; i++) {
-  const book = bookResults[i];
-  // console.log(book.title);
-  // console.log(`clicked id: ${clickedId}, book id: ${book.tempId} `);
+    let result;
+  for (let i = 0; i < bookResults.length; i++) {
+    const book = bookResults[i];
+    // console.log(book.title);
+    // console.log(`clicked id: ${clickedId}, book id: ${book.tempId} `);
+    
+    
+        if (book.tempId == clickedId) {
+          result = book;
+        }
+  };
   
-  
-      if (book.tempId == clickedId) {
-        result = book;
-      }
-};
 
-// console.log(result);
-
-
-//   function matchId(book) {
-//     return book.id === clickedId;
-//   }
-  
-//   console.log(bookResults.find(matchId));
-
-
-// let result =  bookResults.findi(matchId);
 console.log(`the matching one is: ${result}`);
-
-
-
-
-  // const result = await fetch(`/api/search/searchResults/${clickedId}`, {
-  //   method: "GET",
-  // header: {"Content-Type": "application/json"}});
-
-  // console.log(result.data);
-
-  //look through search result array to find marching id
-  // const result = searchResults.find(({ id }) => id == clickedId);
 
   console.log(
     `___________THIS SHOULD BE THE BOOK THAT MATCHED THE CLICKED ID________________`
@@ -235,7 +236,7 @@ console.log(`the matching one is: ${result}`);
 
   console.log(bookToAdd);
 
-  const response = await fetch(`https://localhost:3001/api/search/addBook`, {
+  const response = await fetch(`/api/search/addBook`, {
     method: "POST",
     body: JSON.stringify(bookToAdd),
     headers: {
@@ -249,6 +250,7 @@ console.log(`the matching one is: ${result}`);
   } else {
     alert("Failed to add the book");
   }
+}
 };
 
 //this checks which page we're on so i dont get errors about not being able to access the addeventlisteners
@@ -256,12 +258,12 @@ const pageChecker = function () {
   console.log("checking which page we're on");
   console.log(window.location.pathname);
 
-  if (window.location.pathname === "/Users/heatherellenstrain/bootcamp/class/week8_aug5/Shelfie/public/html/searchtest.html") {
+  if (window.location.pathname === "/search") {
     //event listener for the search btn
     document
       .querySelector("#search-btn")
       .addEventListener("click", searchHandler);
-  } else if (window.location.pathname === "/Users/heatherellenstrain/bootcamp/class/week8_aug5/Shelfie/public/html/searchtest-results.html"){
+  } else if (window.location.pathname === "/search-results"){
     //on page load get the search results
     getBooks(search);
     console.log(("performing the search for" + search));
@@ -271,7 +273,7 @@ const pageChecker = function () {
     addBook.addEventListener("click", bookAddHandler);
 
   }
-};
+}
 //calls the function that checks the page
 pageChecker();
 
