@@ -42,3 +42,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
+  // JavaScript to handle input focus and redirection
+  document.getElementById('focus-button').addEventListener('click', function() {
+    var searchInput = document.getElementById('search-input');
+    
+    // Toggle the visibility of the input field
+    searchInput.classList.toggle('hidden');
+    
+    // Focus on the input field when it is shown
+    if (!searchInput.classList.contains('hidden')) {
+      searchInput.focus();
+    }
+  });
+
+  document.getElementById('search-input').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault(); // Prevent the default action of the enter key
+
+      // Redirect to the login page
+      window.location.href = '/login';
+    }
+  });

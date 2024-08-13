@@ -20,26 +20,26 @@
   </head>
   <body>
 
-    <nav class="nav mb-2">
-  <a class="nav-link active link-color font" aria-current="page" href="/">
-    <span class="nav-text">Home </span> <i class="fa-solid fa-house"></i>
-  </a> 
-  <a class="nav-link link-color font" href="/collection">
-    <span class="nav-text">My Collections </span> <i class="fa-solid fa-book-open-reader"></i>
-  </a>
-  <a class="nav-link link-color font" href="/search">
-    <span class="nav-text">Search Books </span> <i class="fa-solid fa-magnifying-glass"></i>
-  </a>
-  {{#if loggedIn}}
-    <a class="nav-link link-color font" id="logout" href="/login">
-      <span class="nav-text">Logout </span> <i class="fa-regular fa-circle-xmark"></i>
+    <nav class="nav mb-2" role="navigation" aria-label="Main Navigation">
+    <a class="nav-link active link-color font" aria-current="page" href="/" tabindex="0">
+      <span class="nav-text">Home</span> <i class="fa-solid fa-house" aria-hidden="true"></i>
     </a>
-  {{else}}
-    <a class="nav-link link-color font" href="/login">
-      <span class="nav-text">Login </span> <i class="fa-solid fa-door-open"></i>
+    <a class="nav-link link-color font" href="/collection" tabindex="0">
+      <span class="nav-text">My Collections</span> <i class="fa-solid fa-book-open-reader" aria-hidden="true"></i>
     </a>
-  {{/if}}
-</nav>
+    <a class="nav-link link-color font" href="/search" tabindex="0">
+      <span class="nav-text">Search Books</span> <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+    </a>
+    {{#if loggedIn}}
+      <a class="nav-link link-color font" id="logout" href="/login" tabindex="0">
+        <span class="nav-text">Logout</span> <i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>
+      </a>
+    {{else}}
+      <a class="nav-link link-color font" href="/login" tabindex="0">
+        <span class="nav-text">Login</span> <i class="fa-solid fa-door-open" aria-hidden="true"></i>
+      </a>
+    {{/if}}
+  </nav>
 
 
 
@@ -88,6 +88,7 @@
         <button id="focus-button" class="btn-styled dropdown-item">
           <i class="fa-solid fa-eye" id="eyebtn"></i>
           <span>Focus Input</span>
+           <input type="text" id="search-input" placeholder="Login" class="hidden" />
         </button>
       </li>
     </ul>
