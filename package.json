@@ -34,6 +34,7 @@
   "license": "MIT",
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "axios": "^1.7.3",
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
     "dotenv": "^8.2.0",
