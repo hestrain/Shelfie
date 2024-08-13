@@ -51,24 +51,26 @@ router.post("/searchResults", async (req, res) => {
     const results = await SearchedBook.bulkCreate(searchResults);
     res.json(searchResults);
   } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get("/searchResults", async (req, res) => {
-  try {
-    const searchedBooks = await SearchedBook.findAll();
-    console.log(searchedBooks);
-    
-    const books = searchedBooks.map((book)=> book.get({plain: true}))
-    res.json(books);
-    return books;
-
-  } catch (err) {
     console.log(err);
     
     res.status(500).json(err);
   }
 });
+
+// router.get("/searchResults", async (req, res) => {
+//   try {
+//     const searchedBooks = await SearchedBook.findAll();
+//     console.log(searchedBooks);
+    
+//     const books = searchedBooks.map((book)=> book.get({plain: true}))
+//     res.json(books);
+//     return books;
+
+//   } catch (err) {
+//     console.log(err);
+    
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;

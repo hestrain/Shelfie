@@ -1,14 +1,14 @@
-   let bookResults = [];
+//    let bookResults = [];
 
-   //get the search result array to search through it
-const loadBookArray = async function() {
-   bookResults = await fetch(`/api/search/searchResults`, {
-    method: "GET"
-  })
-  console.log((bookResults));
-}
+//    //get the search result array to search through it
+// const loadBookArray = async function() {
+//    bookResults = await fetch(`/api/search/searchResults`, {
+//     method: "GET"
+//   })
+//   console.log((bookResults));
+// }
 
-loadBookArray();
+// loadBookArray();
 
 const bookAddHandler = async (event) => {
   event.preventDefault();
