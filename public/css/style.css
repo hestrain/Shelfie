@@ -66,6 +66,17 @@ img {
   
 }
 
+.container {
+/* display: flex; */
+/* justify-content: center; */
+}
+
+.cover-img {
+  height: 500px;
+  width: 500px;
+
+}
+
 .image{
   display: flex;
   justify-content: center;
@@ -213,3 +224,12 @@ img {
     margin-left: 0.5rem; 
   }
 }
+
+.star {
+  color: lightgray;
+}
+
+.star.glow {
+  color: rgb(211, 218, 4);
+}
+
