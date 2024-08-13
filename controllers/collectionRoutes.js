@@ -20,7 +20,7 @@ router.get("/", withGuard, async (req, res) => {
     );
     // Reminder- We're passing the userExamples data to the page-one handlebars template here!
     // Reminder- We're also passing the loggedIn status to the page-one handlebars template here so that we can conditionally render items if the user is logged in or not.
-    res.render("page-one", {
+    res.render("collection", {
       userBooks,
       loggedIn: req.session.logged_in,
     });
