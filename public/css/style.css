@@ -69,6 +69,17 @@ img {
   
 }
 
+.container {
+/* display: flex; */
+/* justify-content: center; */
+}
+
+.cover-img {
+  height: 500px;
+  width: 500px;
+
+}
+
 .image{
   display: flex;
   justify-content: center;
