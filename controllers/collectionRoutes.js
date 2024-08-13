@@ -18,6 +18,7 @@ router.get("/", withGuard, async (req, res) => {
     const userBooks = booksByUser.map((book) =>
       book.get({ plain: true })
     );
+    console.log("userBooks", userBooks);
     // Reminder- We're passing the userExamples data to the page-one handlebars template here!
     // Reminder- We're also passing the loggedIn status to the page-one handlebars template here so that we can conditionally render items if the user is logged in or not.
     res.render("collection", {
