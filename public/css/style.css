@@ -138,3 +138,12 @@ img {
   height: 240px;
 
 };
+
+
+.star {
+  color: lightgray;
+}
+
+.star.glow {
+  color: rgb(211, 218, 4);
+}
