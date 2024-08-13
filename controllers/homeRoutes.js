@@ -1,7 +1,7 @@
 const router = require("express").Router();
 
 // Import any models you plan to use for data's routes here
-const { ExampleData, User, SearchedBook, Book } = require("../models/");
+const { User, SearchedBook, Book } = require("../models/");
 
 // If you would like to use an authGuard middleware, import it here
 
