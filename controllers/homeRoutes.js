@@ -4,6 +4,7 @@ const router = require("express").Router();
 const { User, SearchedBook, Book } = require("../models/");
 
 // If you would like to use an authGuard middleware, import it here
+const { withGuard } = require("../utils/authGuard");
 
 // add a get / (landing page) route here
 router.get("/", async (req, res) => {
@@ -26,7 +27,7 @@ router.get("/", async (req, res) => {
 });
 
 // get for search
-router.get("/search", async (req, res) => {
+router.get("/search", withGuard, async (req, res) => {
   try {
     res.render("search");
   } catch (err) {
@@ -37,7 +38,7 @@ router.get("/search", async (req, res) => {
 });
 
 // get for search
-router.get("/search-results", async (req, res) => {
+router.get("/search-results",  withGuard, async (req, res) => {
   try {
     const searchResults = await SearchedBook.findAll();
     // Reminder- We're passing the examples data to the home handlebars template here!
