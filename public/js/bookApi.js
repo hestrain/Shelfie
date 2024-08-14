@@ -267,7 +267,48 @@ const pageChecker = function () {
 //calls the function that checks the page, should happen immediately
 pageChecker();
 
-const moreBookInfo = function () {
+const moreBookInfo = async function (event) {
   console.log("and now you'd go to the book page");
   alert("you would go to book info page");
+  event.preventDefault();
+  console.log(event.target);
+
+  event.preventDefault();
+  console.log(event.target);
+
+    const clickedId = event.target.getAttribute("id");
+    console.log(`THE ID OF THE CLICKED BOOK IS ${clickedId}`);
+    //make result variable out here so it can be accessed later
+    let result;
+    //for each of the bookResults check if the id matches clickedId
+    for (let i = 0; i < bookResults.length; i++) {
+      const book = bookResults[i];
+      if (book.tempId == clickedId) {
+        result = book;
+      }
+    }
+
+    //re-create the book without an id so that it can be added to the book database with a new id
+    const bookToAdd = {
+      title: result.title,
+      authors: result.authors,
+      thumbnail: result.thumbnail,
+      publishedDate: result.publishedDate,
+      description: result.description,
+      pageCount: result.pageCount,
+    };
+
+    //log to check
+    console.log(
+      `___________THIS SHOULD BE THE BOOK THAT MATCHED THE CLICKED ID________________`
+    );
+    console.log(bookToAdd);
+
+    
+
+  const response = await fetch(`/book/${clickedId}`, {
+    method: "GET",
+  });
+   window.location.replace(`/book/${clickedId}`);
+
 };
