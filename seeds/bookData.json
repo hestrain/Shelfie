@@ -47,7 +47,7 @@
         "publishedDate": "2019-02-26T00:00:00.000Z",
         "description": "The Priory of the Orange Tree is an epic fantasy novel by Samantha Shannon, offering a standalone story filled with dragons, queens, and a world on the brink of war.",
         "pageCount": 848,
-        "user_id": 2
+        "user_id": 1
     },
     {
         "id": 6,
@@ -57,7 +57,7 @@
         "publishedDate": "2007-03-27T00:00:00.000Z",
         "description": "The Name of the Wind is the first book in Patrick Rothfuss's Kingkiller Chronicle series, telling the story of a gifted young man destined for greatness.",
         "pageCount": 662,
-        "user_id": 4
+        "user_id": 1
     },
     {
         "id": 7,
@@ -67,7 +67,7 @@
         "publishedDate": "2010-08-31T00:00:00.000Z",
         "description": "The Way of Kings is the first book in Brandon Sanderson's Stormlight Archive series, an epic fantasy tale set in a world of storms and magic.",
         "pageCount": 1007,
-        "user_id": 7
+        "user_id": 1
     },
     {
         "id": 8,
@@ -77,7 +77,7 @@
         "publishedDate": "2006-07-17T00:00:00.000Z",
         "description": "Mistborn: The Final Empire is the first book in Brandon Sanderson's Mistborn series, introducing a world where ash falls from the sky and mist rules the night.",
         "pageCount": 541,
-        "user_id": 9
+        "user_id": 1
     },
     {
         "id": 9,
@@ -87,7 +87,7 @@
         "publishedDate": "2006-06-27T00:00:00.000Z",
         "description": "The Lies of Locke Lamora is the first book in Scott Lynch's Gentleman Bastard series, following the adventures of a master thief in a richly detailed fantasy world.",
         "pageCount": 752,
-        "user_id": 12
+        "user_id": 1
     },
     {
         "id": 10,
@@ -97,7 +97,7 @@
         "publishedDate": "2006-05-04T00:00:00.000Z",
         "description": "The Blade Itself is the first book in Joe Abercrombie's First Law trilogy, a gritty and darkly humorous tale of war, politics, and betrayal.",
         "pageCount": 517,
-        "user_id": 8
+        "user_id": 1
     },
     {
         "id": 11,
@@ -107,7 +107,7 @@
         "publishedDate": "2015-08-04T00:00:00.000Z",
         "description": "The Fifth Season is the first book in N.K. Jemisin's Broken Earth trilogy, set in a world plagued by apocalyptic seismic events.",
         "pageCount": 512,
-        "user_id": 3
+        "user_id": 1
     },
     {
         "id": 12,
@@ -117,7 +117,7 @@
         "publishedDate": "1965-08-01T00:00:00.000Z",
         "description": "Dune is a science fiction masterpiece by Frank Herbert, exploring themes of politics, religion, and human nature on the desert planet of Arrakis.",
         "pageCount": 896,
-        "user_id": 4
+        "user_id": 1
     },
     {
         "id": 13,
@@ -127,7 +127,7 @@
         "publishedDate": "1937-09-21T00:00:00.000Z",
         "description": "The Hobbit is a beloved fantasy novel by J.R.R. Tolkien, following the journey of Bilbo Baggins as he embarks on an unexpected adventure.",
         "pageCount": 310,
-        "user_id": 6
+        "user_id": 1
     },
     {
         "id": 14,
@@ -137,7 +137,7 @@
         "publishedDate": "1996-08-06T00:00:00.000Z",
         "description": "A Game of Thrones is the first book in George R.R. Martin's A Song of Ice and Fire series, a tale of power, betrayal, and the struggle for the Iron Throne.",
         "pageCount": 694,
-        "user_id": 8
+        "user_id": 1
     },
     {
         "id": 15,
