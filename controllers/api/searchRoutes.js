@@ -25,7 +25,7 @@ router.get("/search-results", withGuard, async (req, res) => {
 });
 
 //to add the selected searched book ot the database
-router.post("/addBook", async (req, res) => {
+router.post("/addBook",  withGuard, async (req, res) => {
   try {
     console.log("addBook running");
 
@@ -68,7 +68,7 @@ router.post("/searchResults", async (req, res) => {
 });
 
 //get all the searched books?
-router.get("/searchResults", async (req, res) => {
+router.get("/searchResults", withGuard, async (req, res) => {
   try {
     const searchedBooks = await SearchedBook.findAll();
     console.log("-----these are the searchedBooks from the GET route------");
