@@ -133,27 +133,27 @@ function getBooks(searchedBook) {
         addButton.setAttribute("class", "btn btn-light mt-3 mb-3 add-book");
         addButton.textContent = "Add Book to Collection ⊕";
 
-        // more info button (this is a pipe dream)
-        const infoDiv = document.createElement("div");
-        infoDiv.setAttribute("class", "text-center");
-        infoDiv.setAttribute("id", "info-button-div");
-        const infoButton = document.createElement("button");
-        infoButton.setAttribute("type", "submit");
-        infoButton.setAttribute("id", bookBtnId);
-        infoButton.setAttribute("class", "btn btn-light mt-3 mb-3 more-info");
-        infoButton.textContent = "More info about this book ⇒";
+        // // more info button (this is a pipe dream)
+        // const infoDiv = document.createElement("div");
+        // infoDiv.setAttribute("class", "text-center");
+        // infoDiv.setAttribute("id", "info-button-div");
+        // const infoButton = document.createElement("button");
+        // infoButton.setAttribute("type", "submit");
+        // infoButton.setAttribute("id", bookBtnId);
+        // infoButton.setAttribute("class", "btn btn-light mt-3 mb-3 more-info");
+        // infoButton.textContent = "More info about this book ⇒";
 
         //add it all together
         coverDiv.append(resultCover);
         addDiv.append(addButton);
-        infoDiv.append(infoButton);
-        bodyDiv.append(resultTitle, resultAuthor, resultDesc, infoDiv, addDiv);
+        // infoDiv.append(infoButton);
+        bodyDiv.append(resultTitle, resultAuthor, resultDesc, addDiv);
         resultItem.append(coverDiv, bodyDiv);
 
         //and add each item to book zone
         bookZone.append(resultItem);
 
-        infoButton.addEventListener("click", moreBookInfo);
+        // infoButton.addEventListener("click", moreBookInfo);
         addButton.addEventListener("click", bookAddHandler);
       }
     });
@@ -267,48 +267,48 @@ const pageChecker = function () {
 //calls the function that checks the page, should happen immediately
 pageChecker();
 
-const moreBookInfo = async function (event) {
-  console.log("and now you'd go to the book page");
-  alert("you would go to book info page");
-  event.preventDefault();
-  console.log(event.target);
+// const moreBookInfo = async function (event) {
+//   console.log("and now you'd go to the book page");
+//   alert("you would go to book info page");
+//   event.preventDefault();
+//   console.log(event.target);
 
-  event.preventDefault();
-  console.log(event.target);
+//   event.preventDefault();
+//   console.log(event.target);
 
-    const clickedId = event.target.getAttribute("id");
-    console.log(`THE ID OF THE CLICKED BOOK IS ${clickedId}`);
-    //make result variable out here so it can be accessed later
-    let result;
-    //for each of the bookResults check if the id matches clickedId
-    for (let i = 0; i < bookResults.length; i++) {
-      const book = bookResults[i];
-      if (book.tempId == clickedId) {
-        result = book;
-      }
-    }
+//     const clickedId = event.target.getAttribute("id");
+//     console.log(`THE ID OF THE CLICKED BOOK IS ${clickedId}`);
+//     //make result variable out here so it can be accessed later
+//     let result;
+//     //for each of the bookResults check if the id matches clickedId
+//     for (let i = 0; i < bookResults.length; i++) {
+//       const book = bookResults[i];
+//       if (book.tempId == clickedId) {
+//         result = book;
+//       }
+//     }
 
-    //re-create the book without an id so that it can be added to the book database with a new id
-    const bookToAdd = {
-      title: result.title,
-      authors: result.authors,
-      thumbnail: result.thumbnail,
-      publishedDate: result.publishedDate,
-      description: result.description,
-      pageCount: result.pageCount,
-    };
+//     //re-create the book without an id so that it can be added to the book database with a new id
+//     const bookToAdd = {
+//       title: result.title,
+//       authors: result.authors,
+//       thumbnail: result.thumbnail,
+//       publishedDate: result.publishedDate,
+//       description: result.description,
+//       pageCount: result.pageCount,
+//     };
 
-    //log to check
-    console.log(
-      `___________THIS SHOULD BE THE BOOK THAT MATCHED THE CLICKED ID________________`
-    );
-    console.log(bookToAdd);
+//     //log to check
+//     console.log(
+//       `___________THIS SHOULD BE THE BOOK THAT MATCHED THE CLICKED ID________________`
+//     );
+//     console.log(bookToAdd);
 
     
 
-  const response = await fetch(`/book/${clickedId}`, {
-    method: "GET",
-  });
-   window.location.replace(`/book/${clickedId}`);
+//   const response = await fetch(`/book/${clickedId}`, {
+//     method: "GET",
+//   });
+//    window.location.replace(`/book/${clickedId}`);
 
-};
+// };
